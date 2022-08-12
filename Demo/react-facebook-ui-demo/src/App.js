@@ -5,14 +5,13 @@ import {
   Button,
   NavItem,
   NavSmall,
-  Button,
   ButtonIcon,
   Card,
   Image,
   useAppTheme,
 } from 'react-facebook-ui';
-import SearchIcon from './assets/search.js';
-import ListIcon from './assets/list.js';
+import { ReactComponent as SearchIcon } from "./assets/search.svg";
+import { ReactComponent as ListIcon } from "./assets/list.svg";
 
 import FormStepperExample from './FormStepperExample';
 
