@@ -4,6 +4,7 @@ This UI package is one of my **Must Create** projects , i spent a couple of mont
 
 Please contact me via:
 
+- <a href="http://samikhammar.github.io/" rel="noopener" target="_blank">My Portfolio</a>
 - <a href="https://www.linkedin.com/in/sami-khammar/" rel="noopener" target="_blank">My LinkedIn</a>
 
 Thank you.
@@ -774,7 +775,7 @@ export default function MyComponent() {
 
 | prop      | definition          | valid values |
 |-----------|---------------------|--------------|
-type | the main types of the `<Input/>` | "text" , "number" , "integer" , "date", "textarea"
+type | the main types of the `<Input/>` | "text" , "number" , "integer" ,"email", "password" , "tel", "date" , "textarea"
 form | the form state object returned from [useForm](#useForm) hook | object
 formName | name of the input , must be unique | string
 disabled | disables the input box | boolean
@@ -846,7 +847,7 @@ form | the form state object returned from [useForm](#useForm) hook | object
 formName | name of the input , must be unique | string
 disabled | disables the checkbox | boolean
 label | label for the checkbox | string
-switch_ | transforms shape of a checkbox to a switch | boolean
+isSwitch | transforms shape of a checkbox to a switch | boolean
 color | main color of the Checkbox | any color name from [these values](#radio-checkbox-color)
 required | makes the input field required and must have a valid value | boolean
 onChange | called when input value changes | function
@@ -1148,6 +1149,7 @@ export default function AppWrapper({children}) {
 trigger | current ref of element | DOM element 
 disabled | enable or disable opening the menu | boolean
 position | initial position of the menu | "top" , "top-left" , "top-right" , "bottom" , "bottom-left" , "bottom-right" , "left" , "left-top" , "left-bottom" , "right" , "right-top" , "right-bottom"
+autoPosition | enables auto menu on scroll positioning, ( default: `true` ) |boolean
 offset | distance between menu and trigger in pixels | number 
 showTick | show menu triangle tick | boolean
 closeOnBackdrop | enable closing the Menu when user clicks on Backdrop | boolean
@@ -1804,7 +1806,7 @@ import {MainLayout} from "react-facebook-ui";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <MainLayout toastContainerProps={{top:true, right:true, defaultDuration:4000}}>
+      <MainLayout toastContainerProps={{position:"top-right", defaultDuration:4000}}>
           <App />
       </MainLayout>
   </React.StrictMode>
@@ -1815,8 +1817,7 @@ root.render(
 
 | prop      | definition          | valid values |
 |-----------|---------------------|--------------|
-top | if true , toast will appear on the **top** instead of **bottom** | boolean
-right |  if true , toast will appear on the **right** instead of **left** | boolean
+position| the position of toasts| "top","bottom","top-left","top-right","bottom-left","bottom-right",
 defaultDuration | default duration of a toast in milliseconds | number , (default 6000)  
 
 **Props: (Toast)**
